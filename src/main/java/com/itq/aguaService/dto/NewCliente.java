@@ -6,7 +6,7 @@
 //
 
 
-package com.itq.autoService.dto;
+package com.itq.aguaService.dto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,12 +25,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="idCliente"&gt;
- *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
- *             &lt;/restriction&gt;
- *           &lt;/simpleType&gt;
- *         &lt;/element&gt;
  *         &lt;element name="nombres" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="primerApellido" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="segundoApellido" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
@@ -94,17 +88,15 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "idCliente",
     "nombres",
     "primerApellido",
     "segundoApellido",
     "zona",
     "direccion"
 })
-@XmlRootElement(name = "cliente")
-public class Cliente {
+@XmlRootElement(name = "newCliente")
+public class NewCliente {
 
-    protected int idCliente;
     @XmlElement(required = true)
     protected String nombres;
     @XmlElement(required = true)
@@ -113,23 +105,7 @@ public class Cliente {
     @XmlElement(name = "Zona")
     protected int zona;
     @XmlElement(required = true)
-    protected Cliente.Direccion direccion;
-
-    /**
-     * Gets the value of the idCliente property.
-     * 
-     */
-    public int getIdCliente() {
-        return idCliente;
-    }
-
-    /**
-     * Sets the value of the idCliente property.
-     * 
-     */
-    public void setIdCliente(int value) {
-        this.idCliente = value;
-    }
+    protected NewCliente.Direccion direccion;
 
     /**
      * Gets the value of the nombres property.
@@ -224,10 +200,10 @@ public class Cliente {
      * 
      * @return
      *     possible object is
-     *     {@link Cliente.Direccion }
+     *     {@link NewCliente.Direccion }
      *     
      */
-    public Cliente.Direccion getDireccion() {
+    public NewCliente.Direccion getDireccion() {
         return direccion;
     }
 
@@ -236,10 +212,10 @@ public class Cliente {
      * 
      * @param value
      *     allowed object is
-     *     {@link Cliente.Direccion }
+     *     {@link NewCliente.Direccion }
      *     
      */
-    public void setDireccion(Cliente.Direccion value) {
+    public void setDireccion(NewCliente.Direccion value) {
         this.direccion = value;
     }
 

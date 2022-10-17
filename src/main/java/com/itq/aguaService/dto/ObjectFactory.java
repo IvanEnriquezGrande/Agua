@@ -6,7 +6,7 @@
 //
 
 
-package com.itq.autoService.dto;
+package com.itq.aguaService.dto;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

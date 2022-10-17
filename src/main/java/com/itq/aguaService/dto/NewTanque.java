@@ -6,7 +6,7 @@
 //
 
 
-package com.itq.autoService.dto;
+package com.itq.aguaService.dto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -24,12 +24,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="idTanque"&gt;
- *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
- *             &lt;/restriction&gt;
- *           &lt;/simpleType&gt;
- *         &lt;/element&gt;
  *         &lt;element name="zona"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
@@ -60,34 +54,16 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "idTanque",
     "zona",
     "capacidad",
     "tiempoLlenado"
 })
-@XmlRootElement(name = "tanque")
-public class Tanque {
+@XmlRootElement(name = "newTanque")
+public class NewTanque {
 
-    protected int idTanque;
     protected int zona;
     protected int capacidad;
     protected int tiempoLlenado;
-
-    /**
-     * Gets the value of the idTanque property.
-     * 
-     */
-    public int getIdTanque() {
-        return idTanque;
-    }
-
-    /**
-     * Sets the value of the idTanque property.
-     * 
-     */
-    public void setIdTanque(int value) {
-        this.idTanque = value;
-    }
 
     /**
      * Gets the value of the zona property.

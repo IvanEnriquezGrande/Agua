@@ -6,11 +6,10 @@
 //
 
 
-package com.itq.autoService.dto;
+package com.itq.aguaService.dto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,36 +24,29 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="idSolicitud"&gt;
- *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
- *             &lt;/restriction&gt;
- *           &lt;/simpleType&gt;
- *         &lt;/element&gt;
  *         &lt;element name="idTanque"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
  *             &lt;/restriction&gt;
  *           &lt;/simpleType&gt;
  *         &lt;/element&gt;
- *         &lt;element name="idCliente"&gt;
+ *         &lt;element name="zona"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;minInclusive value="1"/&gt;
+ *               &lt;maxInclusive value="3"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="capacidad"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
  *             &lt;/restriction&gt;
  *           &lt;/simpleType&gt;
  *         &lt;/element&gt;
- *         &lt;element name="litros"&gt;
+ *         &lt;element name="tiempoLlenado"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
- *               &lt;maxInclusive value="1500"/&gt;
- *               &lt;minInclusive value="5"/&gt;
- *             &lt;/restriction&gt;
- *           &lt;/simpleType&gt;
- *         &lt;/element&gt;
- *         &lt;element name="fecha"&gt;
- *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
- *               &lt;pattern value="(\d{2}/\d{2}/\d{4})"/&gt;
  *             &lt;/restriction&gt;
  *           &lt;/simpleType&gt;
  *         &lt;/element&gt;
@@ -68,37 +60,18 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "idSolicitud",
     "idTanque",
-    "idCliente",
-    "litros",
-    "fecha"
+    "zona",
+    "capacidad",
+    "tiempoLlenado"
 })
-@XmlRootElement(name = "solicitud")
-public class Solicitud {
+@XmlRootElement(name = "tanque")
+public class Tanque {
 
-    protected int idSolicitud;
     protected int idTanque;
-    protected int idCliente;
-    protected int litros;
-    @XmlElement(required = true)
-    protected String fecha;
-
-    /**
-     * Gets the value of the idSolicitud property.
-     * 
-     */
-    public int getIdSolicitud() {
-        return idSolicitud;
-    }
-
-    /**
-     * Sets the value of the idSolicitud property.
-     * 
-     */
-    public void setIdSolicitud(int value) {
-        this.idSolicitud = value;
-    }
+    protected int zona;
+    protected int capacidad;
+    protected int tiempoLlenado;
 
     /**
      * Gets the value of the idTanque property.
@@ -117,59 +90,51 @@ public class Solicitud {
     }
 
     /**
-     * Gets the value of the idCliente property.
+     * Gets the value of the zona property.
      * 
      */
-    public int getIdCliente() {
-        return idCliente;
+    public int getZona() {
+        return zona;
     }
 
     /**
-     * Sets the value of the idCliente property.
+     * Sets the value of the zona property.
      * 
      */
-    public void setIdCliente(int value) {
-        this.idCliente = value;
+    public void setZona(int value) {
+        this.zona = value;
     }
 
     /**
-     * Gets the value of the litros property.
+     * Gets the value of the capacidad property.
      * 
      */
-    public int getLitros() {
-        return litros;
+    public int getCapacidad() {
+        return capacidad;
     }
 
     /**
-     * Sets the value of the litros property.
+     * Sets the value of the capacidad property.
      * 
      */
-    public void setLitros(int value) {
-        this.litros = value;
+    public void setCapacidad(int value) {
+        this.capacidad = value;
     }
 
     /**
-     * Gets the value of the fecha property.
+     * Gets the value of the tiempoLlenado property.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getFecha() {
-        return fecha;
+    public int getTiempoLlenado() {
+        return tiempoLlenado;
     }
 
     /**
-     * Sets the value of the fecha property.
+     * Sets the value of the tiempoLlenado property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
-    public void setFecha(String value) {
-        this.fecha = value;
+    public void setTiempoLlenado(int value) {
+        this.tiempoLlenado = value;
     }
 
 }

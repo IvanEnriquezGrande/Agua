@@ -6,10 +6,11 @@
 //
 
 
-package com.itq.autoService.dto;
+package com.itq.aguaService.dto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -24,23 +25,24 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="zona"&gt;
- *           &lt;simpleType&gt;
- *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
- *               &lt;minInclusive value="1"/&gt;
- *               &lt;maxInclusive value="3"/&gt;
- *             &lt;/restriction&gt;
- *           &lt;/simpleType&gt;
- *         &lt;/element&gt;
- *         &lt;element name="capacidad"&gt;
+ *         &lt;element name="idCliente"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
  *             &lt;/restriction&gt;
  *           &lt;/simpleType&gt;
  *         &lt;/element&gt;
- *         &lt;element name="tiempoLlenado"&gt;
+ *         &lt;element name="litros"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *               &lt;maxInclusive value="1500"/&gt;
+ *               &lt;minInclusive value="5"/&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="fecha"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string"&gt;
+ *               &lt;pattern value="(\d{2}/\d{2}/\d{4})"/&gt;
  *             &lt;/restriction&gt;
  *           &lt;/simpleType&gt;
  *         &lt;/element&gt;
@@ -54,63 +56,72 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "zona",
-    "capacidad",
-    "tiempoLlenado"
+    "idCliente",
+    "litros",
+    "fecha"
 })
-@XmlRootElement(name = "newTanque")
-public class NewTanque {
+@XmlRootElement(name = "newSolicitud")
+public class NewSolicitud {
 
-    protected int zona;
-    protected int capacidad;
-    protected int tiempoLlenado;
+    protected int idCliente;
+    protected int litros;
+    @XmlElement(required = true)
+    protected String fecha;
 
     /**
-     * Gets the value of the zona property.
+     * Gets the value of the idCliente property.
      * 
      */
-    public int getZona() {
-        return zona;
+    public int getIdCliente() {
+        return idCliente;
     }
 
     /**
-     * Sets the value of the zona property.
+     * Sets the value of the idCliente property.
      * 
      */
-    public void setZona(int value) {
-        this.zona = value;
+    public void setIdCliente(int value) {
+        this.idCliente = value;
     }
 
     /**
-     * Gets the value of the capacidad property.
+     * Gets the value of the litros property.
      * 
      */
-    public int getCapacidad() {
-        return capacidad;
+    public int getLitros() {
+        return litros;
     }
 
     /**
-     * Sets the value of the capacidad property.
+     * Sets the value of the litros property.
      * 
      */
-    public void setCapacidad(int value) {
-        this.capacidad = value;
+    public void setLitros(int value) {
+        this.litros = value;
     }
 
     /**
-     * Gets the value of the tiempoLlenado property.
+     * Gets the value of the fecha property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getTiempoLlenado() {
-        return tiempoLlenado;
+    public String getFecha() {
+        return fecha;
     }
 
     /**
-     * Sets the value of the tiempoLlenado property.
+     * Sets the value of the fecha property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setTiempoLlenado(int value) {
-        this.tiempoLlenado = value;
+    public void setFecha(String value) {
+        this.fecha = value;
     }
 
 }

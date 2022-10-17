@@ -6,7 +6,7 @@
 //
 
 
-package com.itq.autoService.dto;
+package com.itq.aguaService.dto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,6 +25,18 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="idSolicitud"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
+ *         &lt;element name="idTanque"&gt;
+ *           &lt;simpleType&gt;
+ *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
+ *             &lt;/restriction&gt;
+ *           &lt;/simpleType&gt;
+ *         &lt;/element&gt;
  *         &lt;element name="idCliente"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
@@ -56,17 +68,53 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
+    "idSolicitud",
+    "idTanque",
     "idCliente",
     "litros",
     "fecha"
 })
-@XmlRootElement(name = "newSolicitud")
-public class NewSolicitud {
+@XmlRootElement(name = "solicitud")
+public class Solicitud {
 
+    protected int idSolicitud;
+    protected int idTanque;
     protected int idCliente;
     protected int litros;
     @XmlElement(required = true)
     protected String fecha;
+
+    /**
+     * Gets the value of the idSolicitud property.
+     * 
+     */
+    public int getIdSolicitud() {
+        return idSolicitud;
+    }
+
+    /**
+     * Sets the value of the idSolicitud property.
+     * 
+     */
+    public void setIdSolicitud(int value) {
+        this.idSolicitud = value;
+    }
+
+    /**
+     * Gets the value of the idTanque property.
+     * 
+     */
+    public int getIdTanque() {
+        return idTanque;
+    }
+
+    /**
+     * Sets the value of the idTanque property.
+     * 
+     */
+    public void setIdTanque(int value) {
+        this.idTanque = value;
+    }
 
     /**
      * Gets the value of the idCliente property.

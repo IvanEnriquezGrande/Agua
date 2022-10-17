@@ -6,4 +6,4 @@
 //
 
 @javax.xml.bind.annotation.XmlSchema(namespace = "http://com.Agua", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
-package com.itq.autoService.dto;
+package com.itq.aguaService.dto;

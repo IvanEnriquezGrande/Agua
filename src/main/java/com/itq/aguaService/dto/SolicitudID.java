@@ -6,7 +6,7 @@
 //
 
 
-package com.itq.autoService.dto;
+package com.itq.aguaService.dto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="idTanque"&gt;
+ *         &lt;element name="idConsulta"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
  *             &lt;/restriction&gt;
@@ -40,27 +40,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "idTanque"
+    "idConsulta"
 })
-@XmlRootElement(name = "tanqueID")
-public class TanqueID {
+@XmlRootElement(name = "solicitudID")
+public class SolicitudID {
 
-    protected int idTanque;
+    protected int idConsulta;
 
     /**
-     * Gets the value of the idTanque property.
+     * Gets the value of the idConsulta property.
      * 
      */
-    public int getIdTanque() {
-        return idTanque;
+    public int getIdConsulta() {
+        return idConsulta;
     }
 
     /**
-     * Sets the value of the idTanque property.
+     * Sets the value of the idConsulta property.
      * 
      */
-    public void setIdTanque(int value) {
-        this.idTanque = value;
+    public void setIdConsulta(int value) {
+        this.idConsulta = value;
     }
 
 }
