@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:tns1="http://com.Agua" targetNamespace="http://com.Agua"> 
+    <xs:element name="clienteId">
+        <xs:annotation>
+            <xs:documentation>Id para consultar informacion de cliente</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idCliente">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int"/>		
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="newCliente">
+        <xs:annotation>
+            <xs:documentation>Datos para registrar cliente</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombres" type="xs:string"/>
+                <xs:element name="primerApellido" type="xs:string"/>
+                <xs:element name="segundoApellido" type="xs:string" minOccurs="0"/>
+                <xs:element name="Zona">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:minInclusive value="1"/>
+                            <xs:maxInclusive value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="direccion">
+                    <xs:complexType>
+                        <xs:annotation>
+                            <xs:documentation>Tipo de direccion</xs:documentation>
+                        </xs:annotation>
+                        <xs:sequence>
+                            <xs:element name="calle" type="xs:string"/>
+                            <xs:element name="colonia" type="xs:string"/>
+                            <xs:element name="numeroInterior">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:minInclusive value="0"></xs:minInclusive>
+                                        <xs:maxExclusive value="10000"></xs:maxExclusive>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="numeroExterior">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:minInclusive value="0"></xs:minInclusive>
+                                        <xs:maxExclusive value="10000"></xs:maxExclusive>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="telefono">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="/+[0-9]{3}[0-9]{10}"></xs:pattern>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="correo">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="([a-zA-Z0-9_.]+@(gmail|hotmail|outlook|yahoo).com)"></xs:pattern>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="cliente">
+        <xs:annotation>
+            <xs:documentation>Datos para registrar cliente</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idCliente">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int"></xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="nombres" type="xs:string"/>
+                <xs:element name="primerApellido" type="xs:string"/>
+                <xs:element name="segundoApellido" type="xs:string" minOccurs="0"/>
+                <xs:element name="Zona">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:minInclusive value="1"/>
+                            <xs:maxInclusive value="3"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="direccion">
+                    <xs:complexType>
+                        <xs:annotation>
+                            <xs:documentation>Tipo de direccion</xs:documentation>
+                        </xs:annotation>
+                        <xs:sequence>
+                            <xs:element name="calle" type="xs:string"/>
+                            <xs:element name="colonia" type="xs:string"/>
+                            <xs:element name="numeroInterior">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:minInclusive value="0"></xs:minInclusive>
+                                        <xs:maxExclusive value="10000"></xs:maxExclusive>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="numeroExterior">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:int">
+                                        <xs:minInclusive value="0"></xs:minInclusive>
+                                        <xs:maxExclusive value="10000"></xs:maxExclusive>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="telefono">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="/+[0-9]{3}[0-9]{10}"></xs:pattern>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="correo">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="([a-zA-Z0-9_.]+@(gmail|hotmail|outlook|yahoo).com)"></xs:pattern>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
