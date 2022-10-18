@@ -15,6 +15,21 @@
         </xs:complexType>
     </xs:element>
     
+    <xs:element name="clienteIdDelete">
+        <xs:annotation>
+            <xs:documentation>Id para consultar informacion de cliente</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idCliente">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int"/>		
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
     <xs:element name="newCliente">
         <xs:annotation>
             <xs:documentation>Datos para registrar cliente</xs:documentation>

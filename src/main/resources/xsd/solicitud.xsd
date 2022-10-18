@@ -46,6 +46,21 @@
         </xs:complexType>
     </xs:element>
     
+    <xs:element name="solicitudIDDelete">
+        <xs:annotation>
+            <xs:documentation>Estructura para hacer una solicitud</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idConsulta">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int"></xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
     <xs:element name="solicitud">
         <xs:annotation>
             <xs:documentation>Estructura para hacer una solicitud</xs:documentation>

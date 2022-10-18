@@ -16,6 +16,21 @@
         </xs:complexType>
     </xs:element>
     
+    <xs:element name="tanqueIDDelete">
+        <xs:annotation>
+            <xs:documentation>Datos para consultar un tanque</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="idTanque">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int"></xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
     <xs:element name="newTanque">
         <xs:annotation>
             <xs:documentation>Datos para dar de alta un tanque</xs:documentation>

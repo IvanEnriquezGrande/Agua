@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="idCliente"&gt;
+ *         &lt;element name="idTanque"&gt;
  *           &lt;simpleType&gt;
  *             &lt;restriction base="{http://www.w3.org/2001/XMLSchema}int"&gt;
  *             &lt;/restriction&gt;
@@ -40,27 +40,27 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "idCliente"
+    "idTanque"
 })
-@XmlRootElement(name = "clienteId")
-public class ClienteId {
+@XmlRootElement(name = "tanqueIDDelete")
+public class TanqueIDDelete {
 
-    protected int idCliente;
+    protected int idTanque;
 
     /**
-     * Gets the value of the idCliente property.
+     * Gets the value of the idTanque property.
      * 
      */
-    public int getIdCliente() {
-        return idCliente;
+    public int getIdTanque() {
+        return idTanque;
     }
 
     /**
-     * Sets the value of the idCliente property.
+     * Sets the value of the idTanque property.
      * 
      */
-    public void setIdCliente(int value) {
-        this.idCliente = value;
+    public void setIdTanque(int value) {
+        this.idTanque = value;
     }
 
 }
